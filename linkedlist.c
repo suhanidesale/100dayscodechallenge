@@ -27,54 +27,62 @@ void create(int n)
     struct node *temp;           //temp to manage from 3rd case and to traverse the list
     newnode = (struct node *)malloc(sizeof(struct node)); //to return address of head
     
-    int choice = 1;
+       int choice;
     
         printf("Enter Data: ");
         scanf("%d", &data);
         newnode->data = val;
         newnode->next = NULL; 
-        temp = newnode;
+        newnode = temp;
 
        
 
-        if (head == NULL)
-        {
-            head = temp = newnode; //to store adress of data in head pointer
-            head->next = NULL;
-            temp->next = NULL;
-        }
+        // if (head == NULL)
+        // {
+        //     head = temp = newnode; //to store adress of data in head pointer
+        //     head->next = NULL;
+        //     temp->next = NULL;
+        // }
 
-        else
-        {
-            printf("Enter Data: ");
-            scanf("%d", &val);   
-            newnode->data = data; // Link data field of newNode
-            newnode->next = NULL; // Make sure new node points to NULL
-            temp = newnode;
+        
+        
+            // printf("Enter Data: ");
+            // scanf("%d", &val);   
+            // newnode->data = data; // Link data field of newNode
+            // newnode->next = NULL; // Make sure new node points to NULL
+            // //temp = newnode;
             
-        }
-        for (int i = 2; i < n; i++)
-        {
-            newnode = (struct node *)malloc(sizeof(struct node)); //to return address of head
-            if(newnode == NULL)
-            {
-                printf("Memory can't be allocated");
-            }
-            else
-            {
-                printf("Enter Data: ");
-                scanf("%d", &val);   
+        
+        //for (int i = 2; i < n; i++)
+        // {
+        //     newnode = (struct node *)malloc(sizeof(struct node)); //to return address of head
+        //     if(newnode == NULL)
+        //     {
+        //         printf("Memory can't be allocated");
+        //     }
+        //     else
+        //     {
+        //         printf("Enter Data: ");
+        //         scanf("%d", &val);   
 
-                newnode->data = val;
-                newnode->next = NULL;
+        //         newnode->data = val;
+        //         newnode->next = NULL;
 
-                temp->next = newnode;
-                temp = temp->next;
-            }
+        //         temp->next = newnode;
+        //         temp = temp->next;
+        //     }
             
 
+        // }
+
+        temp = head;
+        while(temp != NULL)
+        {
+            
+            temp = temp->next;
+
         }
-    
+    temp->next = newnode;
 }
 
 void traverse()
@@ -99,10 +107,27 @@ void traverse()
     }
 }
 
+// void insert_atbeg()
+// {
+//     printf("Enter data you want to insert: ");
+//     scanf("%d",&newnode->data)
+//     newnode->next = head;
+//     head = newnode 
+
+// }
+
+// void insert_atend()
+// {
+//     printf("Enter data you want to insert: ");
+//     scanf("%d",&newnode->data)
+//     newnode->next = NULL;
+
+// }
+
 int main()
 {
     int n;
-    int choice = 1;
+    int choice ;
     struct node *newNode, *temp;
 
     while (1)
@@ -122,13 +147,13 @@ int main()
         switch (choice)
         {
         case 1:
-            printf("Enter no of elements: ");
-            scanf("%d", &n);
+            // printf("Enter no of elements: ");
+            // scanf("%d", &n);
             create(n);
-            break;
-        case 2:
             traverse();
             break;
+        // case 2:
+        //     break;
         // case 3:
         //     insertAtFront();
         //     break;
