@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void printallindexes(int a[] , int n , int x, int i,int &count)
+void printallindexes(int a[] , int n , int x, int i)
 {
     if (i == n)
     {
@@ -9,10 +9,9 @@ void printallindexes(int a[] , int n , int x, int i,int &count)
     }
     if (a[i] == x)
     {
-        count = count+1;
+        cout<<i<<" ";
     }
-    printallindexes(a,n,x,i+1,count);
-    
+    printallindexes(a,n,x,i+1);
 
 
 }
@@ -20,9 +19,7 @@ void printallindexes(int a[] , int n , int x, int i,int &count)
 
 int main(){
     int a[] = {1,4,5,5,7};
-    int count = 0;
-    printallindexes(a,5,5,1,count);
-    cout<<count;
+    printallindexes(a,5,5,1);
 
     return 0;
 }
